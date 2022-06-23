@@ -16,6 +16,8 @@
 		2BA240BD2863B37100B02251 /* ToDoApp_TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA240BC2863B37100B02251 /* ToDoApp_TDDTests.swift */; };
 		2BA240C72863B37100B02251 /* ToDoApp_TDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA240C62863B37100B02251 /* ToDoApp_TDDUITests.swift */; };
 		2BA240C92863B37200B02251 /* ToDoApp_TDDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA240C82863B37200B02251 /* ToDoApp_TDDUITestsLaunchTests.swift */; };
+		2BA240DC2864685F00B02251 /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA240DB2864685F00B02251 /* TaskTests.swift */; };
+		2BA240DF2864691200B02251 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA240DE2864691200B02251 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2BA240C22863B37100B02251 /* ToDoApp_TDDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoApp_TDDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA240C62863B37100B02251 /* ToDoApp_TDDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp_TDDUITests.swift; sourceTree = "<group>"; };
 		2BA240C82863B37200B02251 /* ToDoApp_TDDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp_TDDUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2BA240DB2864685F00B02251 /* TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTests.swift; sourceTree = "<group>"; };
+		2BA240DE2864691200B02251 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2BA240BC2863B37100B02251 /* ToDoApp_TDDTests.swift */,
+				2BA240DD2864687200B02251 /* Model */,
 			);
 			path = ToDoApp_TDDTests;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		2BA240D52863B38000B02251 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BA240DE2864691200B02251 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +179,14 @@
 				2BA240AE2863B37100B02251 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2BA240DD2864687200B02251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BA240DB2864685F00B02251 /* TaskTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA240DF2864691200B02251 /* Task.swift in Sources */,
 				2BA240AA2863B36F00B02251 /* ViewController.swift in Sources */,
 				2BA240A62863B36F00B02251 /* AppDelegate.swift in Sources */,
 				2BA240A82863B36F00B02251 /* SceneDelegate.swift in Sources */,
@@ -316,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA240DC2864685F00B02251 /* TaskTests.swift in Sources */,
 				2BA240BD2863B37100B02251 /* ToDoApp_TDDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
