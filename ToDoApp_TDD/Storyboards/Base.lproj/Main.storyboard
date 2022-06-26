@@ -191,6 +191,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="save" destination="cyC-Z9-P2a" eventType="touchUpInside" id="2Hi-FL-ZZZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dAQ-5T-yng"/>
