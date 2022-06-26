@@ -24,6 +24,7 @@ class NewTaskViewControllerTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
+        placemark = nil
         sut = nil
     }
     
