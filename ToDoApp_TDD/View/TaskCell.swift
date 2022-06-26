@@ -15,7 +15,7 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     func configure(withTask task: Task) {
-        self.titleLabel.text = task.title
+        titleLabel.text = task.title
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yy"
@@ -25,6 +25,8 @@ class TaskCell: UITableViewCell {
             dateLabel.text = dateString
             
         }
+        
+        locationLabel.text = task.location?.name
         
     }
 }
