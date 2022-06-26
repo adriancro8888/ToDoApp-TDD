@@ -33,6 +33,7 @@
 		2BEB0DA72868BA22008DAA0A /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB0DA62868BA22008DAA0A /* NewTaskViewController.swift */; };
 		2BEB0DA92868F0E8008DAA0A /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB0DA82868F0E8008DAA0A /* APIClientTests.swift */; };
 		2BEB0DAB2868F4E9008DAA0A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB0DAA2868F4E9008DAA0A /* APIClient.swift */; };
+		2BEB0DAE286906C9008DAA0A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB0DAD286906C9008DAA0A /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2BEB0DA62868BA22008DAA0A /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		2BEB0DA82868F0E8008DAA0A /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		2BEB0DAA2868F4E9008DAA0A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2BEB0DAD286906C9008DAA0A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		2BA240A42863B36F00B02251 /* ToDoApp_TDD */ = {
 			isa = PBXGroup;
 			children = (
+				2BEB0DAC286906AD008DAA0A /* Extentions */,
 				2BA240D82863B39700B02251 /* App Supporting files */,
 				2BA240D72863B38B00B02251 /* Controller */,
 				2BA240D62863B38600B02251 /* View */,
@@ -264,6 +267,14 @@
 				2BEB0D9E286897E0008DAA0A /* TaskCellTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2BEB0DAC286906AD008DAA0A /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2BEB0DAD286906C9008DAA0A /* String+Extensions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				2BA240E928647A1900B02251 /* TaskManager.swift in Sources */,
 				2BA240DF2864691200B02251 /* Task.swift in Sources */,
 				2BA240AA2863B36F00B02251 /* TaskListViewController.swift in Sources */,
+				2BEB0DAE286906C9008DAA0A /* String+Extensions.swift in Sources */,
 				2B546DF028649AE20020B53F /* DataProvider.swift in Sources */,
 				2BEB0DAB2868F4E9008DAA0A /* APIClient.swift in Sources */,
 				2B546DF62864A4E60020B53F /* TaskCell.swift in Sources */,
