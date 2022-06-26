@@ -30,7 +30,7 @@ extension DataProvider: UITableViewDataSource {
         switch section {
         case .todo: return taskManager.tasksCount
         case .done: return taskManager.doneTasksCount
-
+            
         }
     }
     
@@ -50,10 +50,7 @@ extension DataProvider: UITableViewDataSource {
             task = taskManager.doneTask(at: indexPath.row)
         }
         
-        
-            cell.configure(withTask: task)
-
-        
+        cell.configure(withTask: task)
         return cell
     }
     
