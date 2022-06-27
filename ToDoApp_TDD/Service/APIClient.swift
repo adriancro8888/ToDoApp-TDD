@@ -14,7 +14,6 @@ protocol URLSessionProtocol {
 }
 
 extension URLSession: URLSessionProtocol {
-    
 }
 
 class APIClient {
@@ -25,12 +24,22 @@ class APIClient {
         
         guard let name = name.addingPercentEncoding(withAllowedCharacters: allowedCharacters),
               let password = password.addingPercentEncoding(withAllowedCharacters: allowedCharacters) else { fatalError() }
-                
+        
         let query = "name=\(name)&password=\(password)"
         guard let url = URL(string: "https://todoapp.com/login?\(query)") else { fatalError() }
         
         urlSession.dataTask(with: url) { data, response, error in
             
+            guard let data = data else { fatalError() }
+            
+            do {
+                let dict = try JSONSerialization.jsonObject(with: data) as? [String: String]
+                let token = dict?["token"]
+                completionHandler(token, nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
         }.resume()
     }
 }
