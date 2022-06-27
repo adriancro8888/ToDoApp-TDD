@@ -24,7 +24,6 @@ class NewTaskViewControllerTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-        placemark = nil
         sut = nil
     }
     
@@ -119,6 +118,24 @@ class NewTaskViewControllerTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testSaveDismissesNewTaskViewController() {
+        let mockNewTaskVC = MockNewTaskViewController()
+        mockNewTaskVC.titleTextField = UITextField()
+        mockNewTaskVC.titleTextField.text = "Foo"
+        mockNewTaskVC.descriptionTextField = UITextField()
+        mockNewTaskVC.descriptionTextField.text = "Bar"
+        mockNewTaskVC.locationTextField = UITextField()
+        mockNewTaskVC.locationTextField.text = "Baz"
+        mockNewTaskVC.addressTextField = UITextField()
+        mockNewTaskVC.addressTextField.text = "Moscow"
+        mockNewTaskVC.dateTextField = UITextField()
+        mockNewTaskVC.dateTextField.text = "01.01.19"
+        
+        mockNewTaskVC.save()
+        
+        XCTAssertTrue(mockNewTaskVC.isDismissed)
+    }
 }
 
 extension NewTaskViewControllerTests {
@@ -136,6 +153,16 @@ extension NewTaskViewControllerTests {
         
         override var location: CLLocation? {
             CLLocation(latitude: mockCoordinate.latitude, longitude: mockCoordinate.longitude)
+        }
+    }
+}
+
+extension NewTaskViewControllerTests {
+    class MockNewTaskViewController: NewTaskViewController {
+        var isDismissed = false
+        
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            isDismissed = true
         }
     }
 }
