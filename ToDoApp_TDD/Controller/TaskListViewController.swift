@@ -43,6 +43,7 @@ class TaskListViewController: UIViewController {
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
         if let viewController = storyboard?.instantiateViewController(withIdentifier: String(describing: NewTaskViewController.self)) as? NewTaskViewController {
             viewController.taskManager = self.dataProvider.taskManager
+            viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: true)
         }
         

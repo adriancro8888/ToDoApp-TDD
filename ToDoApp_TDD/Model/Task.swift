@@ -14,6 +14,7 @@ struct Task {
     let description: String?
     let location: Location?
     let date: Date
+    var isDone = false
     
     var dictionary: [String : Any] {
         var dict: [String : Any] = [:]

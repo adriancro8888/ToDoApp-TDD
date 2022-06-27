@@ -74,7 +74,7 @@ extension DataProvider: UITableViewDataSource {
             task = taskManager.doneTask(at: indexPath.row)
         }
         
-        cell.configure(withTask: task)
+        cell.configure(withTask: task, done: task.isDone)
         return cell
     }
     
