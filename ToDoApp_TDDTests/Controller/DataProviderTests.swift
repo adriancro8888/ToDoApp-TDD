@@ -18,6 +18,7 @@ class DataProviderTests: XCTestCase {
     var controller: TaskListViewController!
     
     override func setUp() {
+        super.setUp()
         sut = DataProvider()
         sut.taskManager = TaskManager()
         
@@ -32,6 +33,7 @@ class DataProviderTests: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         tableView = nil
         sut = nil
     }

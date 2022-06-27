@@ -47,9 +47,9 @@ class NewTaskViewController: UIViewController {
             
             self.taskManager.add(task: task)
             
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-        
-        dismiss(animated: true)
     }
-    
 }
