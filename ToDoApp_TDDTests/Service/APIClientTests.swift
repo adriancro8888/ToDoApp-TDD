@@ -16,8 +16,7 @@ class APIClientTests: XCTestCase {
     var sut: APIClient!
     
     override func setUpWithError() throws {
-        let jsonDataStub = "{\"token\": \"tokenString\"}".data(using: .utf8)
-        mockURLSession = MockURLSession(data: jsonDataStub, urlResponse: nil, responseError: nil)
+        mockURLSession = MockURLSession(data: nil, urlResponse: nil, responseError: nil)
         sut = APIClient()
         sut.urlSession = mockURLSession
     }
@@ -57,7 +56,8 @@ class APIClientTests: XCTestCase {
     }
     
     func testSuccessfullLoginCreatesToken() {
-        
+        let jsonDataStub = "{\"token\": \"tokenString\"}".data(using: .utf8)
+        mockURLSession = MockURLSession(data: jsonDataStub, urlResponse: nil, responseError: nil)
         sut.urlSession = mockURLSession
         let tokenExpectation = expectation(description: "Token expectation")
         
@@ -68,6 +68,53 @@ class APIClientTests: XCTestCase {
         }
         waitForExpectations(timeout: 1) { _ in
             XCTAssertEqual(codeToken, "tokenString")
+        }
+    }
+    
+    func testLoginInvalidJSONReturnsError() {
+        mockURLSession = MockURLSession(data: Data(), urlResponse: nil, responseError: nil)
+        sut.urlSession = mockURLSession
+        let errorExpectation = expectation(description: "Error expectation")
+        
+        var codeError: Error?
+        sut.login(withName: "login", password: "password") { _, error in
+            codeError = error
+            errorExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1) { _ in
+            XCTAssertNotNil(codeError)
+        }
+    }
+    
+    func testLoginWhenDataIsNilReturnsError() {
+        mockURLSession = MockURLSession(data: nil, urlResponse: nil, responseError: nil)
+        sut.urlSession = mockURLSession
+        let errorExpectation = expectation(description: "Error expectation")
+        
+        var codeError: Error?
+        sut.login(withName: "login", password: "password") { _, error in
+            codeError = error
+            errorExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1) { _ in
+            XCTAssertNotNil(codeError)
+        }
+    }
+    
+    func testLoginWhenResponseErrorReturnsError() {
+        let jsonDataStub = "{\"token\": \"tokenString\"}".data(using: .utf8)
+        let error = NSError(domain: "Server error", code: 404, userInfo: nil)
+        mockURLSession = MockURLSession(data: jsonDataStub, urlResponse: nil, responseError: error)
+        sut.urlSession = mockURLSession
+        let errorExpectation = expectation(description: "Error expectation")
+        
+        var caughtError: Error?
+        sut.login(withName: "login", password: "password") { _, error in
+            caughtError = error
+            errorExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1) { _ in
+            XCTAssertNotNil(caughtError)
         }
     }
 }
