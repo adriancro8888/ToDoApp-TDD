@@ -40,6 +40,10 @@ extension DataProvider: UITableViewDelegate {
             
         }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Section \(section)"
+    }
 }
 
 extension DataProvider: UITableViewDataSource {

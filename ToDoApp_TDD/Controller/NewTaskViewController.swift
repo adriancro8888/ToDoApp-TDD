@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 
 class NewTaskViewController: UIViewController {
-
+    
     var taskManager: TaskManager!
     var geocoder = CLGeocoder()
     
@@ -28,7 +28,7 @@ class NewTaskViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yy"
         return dateFormatter
     }
-
+    
     
     @IBAction func save() {
         let titleString = titleTextField.text
@@ -47,9 +47,7 @@ class NewTaskViewController: UIViewController {
             
             self.taskManager.add(task: task)
             
-            DispatchQueue.main.async {
-                self.dismiss(animated: true, completion: nil)
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }

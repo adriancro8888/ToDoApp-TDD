@@ -33,9 +33,10 @@ class DataProviderTests: XCTestCase {
     }
 
     override func tearDown() {
-        super.tearDown()
+        sut.taskManager?.removeAll()
         tableView = nil
         sut = nil
+        super.tearDown()
     }
     
     func testNumberOfSectionsIsTwo() {

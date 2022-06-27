@@ -25,8 +25,7 @@ class NewTaskViewControllerTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        sut = nil
+
     }
     
     func testHasTitleTexField() {
