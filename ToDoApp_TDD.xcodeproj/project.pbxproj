@@ -112,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B473A862869C251008F9277 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				2BA240BC2863B37100B02251 /* ToDoApp_TDDTests.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		2BA240992863B36F00B02251 = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +160,7 @@
 			children = (
 				2BEB0D9D286897CE008DAA0A /* View */,
 				2BA240EA286490D700B02251 /* Controller */,
-				2BA240BC2863B37100B02251 /* ToDoApp_TDDTests.swift */,
+				2B473A862869C251008F9277 /* Supporting files */,
 				2BA240E42864797600B02251 /* Service */,
 				2BA240DD2864687200B02251 /* Model */,
 			);
